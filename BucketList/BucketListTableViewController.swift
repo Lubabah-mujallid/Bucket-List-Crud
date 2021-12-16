@@ -17,6 +17,10 @@ class BucketListTableViewController: UITableViewController {
         print("viewDidLoad")
     }
     
+    @IBAction func addBarBtnPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "cellSegue", sender: sender)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -58,10 +62,11 @@ extension BucketListTableViewController: AddItemTableViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //I know that in the tutorial, if and if-else wareused, but I don't see a need fot them here.
         let navigationC = segue.destination as! UINavigationController
         let addItemCV = navigationC.topViewController as! AddItemTableViewController
         addItemCV.delegate = self
-        if segue.identifier == "cellSegue" {
+        if sender is IndexPath {
             let indexPath  = sender as! NSIndexPath
             let item = list[indexPath.row]
             addItemCV.item = item

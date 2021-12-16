@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="MHn-mB-tPh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tmO-Uk-v3J">
                             <connections>
-                                <segue destination="yb6-9m-5yq" kind="presentation" identifier="addButtonSegue" modalPresentationStyle="fullScreen" id="2F2-xt-fLp"/>
+                                <action selector="addBarBtnPressed:" destination="myS-1o-lbv" id="Fyu-Vc-e7q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,9 +143,6 @@
             <point key="canvasLocation" x="1766.6666666666667" y="56.919642857142854"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="U36-7M-Yr4"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
